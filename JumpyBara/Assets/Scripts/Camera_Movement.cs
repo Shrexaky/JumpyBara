@@ -7,6 +7,11 @@ public class Camera_Movement : MonoBehaviour
     public Transform cel; // Postaæ, za któr¹ ma pod¹¿aæ kamera
     public float offsetPoziomy = 5f; // Offset kamery w osi poziomej
 
+    void Start()
+    {
+
+    }
+
     void Update()
     {
         if (cel != null)
