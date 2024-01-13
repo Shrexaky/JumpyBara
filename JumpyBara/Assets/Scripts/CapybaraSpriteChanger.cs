@@ -13,7 +13,6 @@ public class CapybaraSpriteChanger : MonoBehaviour
         InvokeRepeating("ChangeMoveSprite", 0.2f, 0.2f);
     }
 
-
     void ChangeMoveSprite()
     {
         spriteRenderer.sprite = moveSprites[currentSpriteIndex];
