@@ -10,7 +10,7 @@ public class CapybaraCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Invoke("RestartGame", 3f);
-            GetComponent<CapybaraMovement>().enabled = false;
+            GetComponent<CapybaraMovement>().capybaraStop = true;
         }
     }
 
