@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CapybaraCollision : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class CapybaraCollision : MonoBehaviour
     public GameObject sound_object;
     public ProgressCalculator progressCalculator;
     public bool gameOver=false;
+    public GameObject endCanva;
+    public Slider slider;
+    public float progress;
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -18,11 +22,10 @@ public class CapybaraCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            
-            Invoke("RestartGame", 3f);
             GetComponent<CapybaraMovement>().capybaraStop = true;
             sound_object.GetComponent<AudioSource>().Stop();
             audioSource.Play();
+            endCanva.gameObject.SetActive(true);
             progressCalculator.CalculateAndPrintProgress(gameObject.transform);
         }
     }
@@ -33,12 +36,10 @@ public class CapybaraCollision : MonoBehaviour
         {
             GetComponent<CapybaraMovement>().capybaraStop = true;
             gameOver=true;
+            endCanva.gameObject.SetActive(true);
+            progressCalculator.CalculateAndPrintProgress(gameObject.transform);
         }
     }
 
-    private void RestartGame()
-    {
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
-    }
+
 }
