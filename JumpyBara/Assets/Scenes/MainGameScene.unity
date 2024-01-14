@@ -2995,6 +2995,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 2136857926}
+  progressCalculator: {fileID: 1152548409}
+  progressSlider: {fileID: 1588937924}
+  progresslabel: {fileID: 1224604349}
+  musicController: {fileID: 519420028}
+  attempsLabel: {fileID: 2087804014}
 --- !u!114 &603990648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3739,7 +3744,7 @@ RectTransform:
   m_GameObject: {fileID: 750676867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1482274591}
@@ -8017,7 +8022,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1099370631}
   m_HandleRect: {fileID: 0}
@@ -11405,7 +11410,7 @@ RectTransform:
   m_GameObject: {fileID: 2136857926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1963234122}
@@ -11489,6 +11494,10 @@ PrefabInstance:
       propertyPath: staticSprite
       value: 
       objectReference: {fileID: 21300000, guid: 6e12811643fa2ee4da7ca71d12d6fd68, type: 3}
+    - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: endCanva
+      value: 
+      objectReference: {fileID: 750676867}
     - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: sound_object
       value: 
