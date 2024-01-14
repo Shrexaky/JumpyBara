@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 2939790415700502877}
   - component: {fileID: 2939790415700502875}
   - component: {fileID: 2939790415700502876}
+  - component: {fileID: 1521165940364048360}
   m_Layer: 0
   m_Name: Capybara
   m_TagString: Untagged
@@ -214,6 +215,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   collectSound: {fileID: 0}
+  isWalking: 0
+  isJumping: 0
+  capybaraStop: 0
 --- !u!114 &2939790415700502875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +235,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c93d6fe35f87323459249b18884a61ce, type: 3}
   - {fileID: 21300000, guid: 75ae9dc1cba82204db0103c0401ee842, type: 3}
   - {fileID: 21300000, guid: 3bd800e5c8beca841b3801c244ea9d2f, type: 3}
+  staticSprite: {fileID: 0}
+  jumpSprite: {fileID: 0}
 --- !u!114 &2939790415700502876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +249,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0a81e0d3220334f835172777aa3a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound_object: {fileID: 0}
+  progressCalculator: {fileID: 0}
+--- !u!114 &1521165940364048360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4125112558058980585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8827a8485091c4a8c0a80e3136b274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMarker: {fileID: 0}
+  endMarker: {fileID: 0}
+  progress: 0

@@ -4,25 +4,59 @@ using UnityEngine;
 
 public class Camera_Movement : MonoBehaviour
 {
-	public Transform cel; // Postaæ, za któr¹ ma pod¹¿aæ kamera
-	public float offsetPoziomy = 5f; // Offset kamery w osi poziomej
-
+	public Transform cel;
+	public float offsetPoziomy = 5f;
+	public AudioClip backgroundMusic;
+    private AudioSource audioSource;
+	public GameObject capyabara;
+	private bool gameOver;
 	void Start()
 	{
-
+		PlayMusic();
+		gameOver = capyabara.gameObject.GetComponent<CapybaraCollision>().gameOver;
 	}
 
 	void Update()
 	{
+		gameOver = capyabara.gameObject.GetComponent<CapybaraCollision>().gameOver;
 		if (cel != null)
 		{
 			Podazaj();
+			if(gameOver)
+			{
+				audioSource.Stop();
+			}
+			
 		}
+	}
+
+	void PlayMusic()
+	{
+        if (backgroundMusic != null)
+        {
+            audioSource = gameObject.GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
+
+            audioSource.clip = backgroundMusic;
+
+            audioSource.loop = true;
+            audioSource.playOnAwake = false;
+			
+			audioSource.Play();
+            
+        }
+        else
+        {
+            Debug.LogWarning("Nie przypisano muzyki w edytorze Unity!");
+        }
 	}
 
 	void Podazaj()
 	{
 		Vector3 nowaPozycja = new Vector3(cel.position.x + offsetPoziomy, transform.position.y, transform.position.z);
-		transform.position = Vector3.Lerp(transform.position, nowaPozycja, Time.deltaTime * 2); // P³ynne pod¹¿anie kamery
+		transform.position = Vector3.Lerp(transform.position, nowaPozycja, Time.deltaTime * 2);
 	}
 }
