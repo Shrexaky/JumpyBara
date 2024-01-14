@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CapybaraMovement : MonoBehaviour
@@ -6,28 +7,62 @@ public class CapybaraMovement : MonoBehaviour
     public float walkSpeed = 5f; 
     public Collider2D groundCollider;
     public LayerMask groundLayer;
+    public AudioClip collectSound;
 
     private bool canJump;
-    private bool isJumping;
+    private bool jumpHolding;
+    private int collectedOranges = 0;
+    public bool isWalking;
+    public bool isJumping;
+    private float previousXPosition;
+    public bool capybaraStop=false;
 
+    void Start()
+    {
+        previousXPosition = transform.position.x;
+    }
     void Update()
     {
-        MoveCapybara();
+        if (!capybaraStop)
+        {
+            MoveCapybara();
+        }
+        
 
         if (Input.GetButtonDown("Jump"))
         {
-            isJumping = true;
+         jumpHolding = true;
         }
 
         if (Input.GetButtonUp("Jump"))
         {
-            isJumping = false;
+         jumpHolding = false;
         }
 
-        if (canJump && isJumping)
+        if (canJump && jumpHolding)
         {
-            Jump();
+            if(!capybaraStop)
+            {
+                Jump();
+            }
         }
+
+        float currentXPosition = transform.position.x;
+
+        if (currentXPosition > previousXPosition)
+        {
+            isWalking = true;
+        }
+        else if (currentXPosition < previousXPosition)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
+        }
+
+        previousXPosition = currentXPosition;
     }
 
     void FixedUpdate()
@@ -38,6 +73,7 @@ public class CapybaraMovement : MonoBehaviour
     void CheckGround()
     {
         canJump = Physics2D.Raycast(groundCollider.bounds.center, Vector2.down, groundCollider.bounds.extents.y + 0.1f, groundLayer);
+        isJumping = !Physics2D.Raycast(groundCollider.bounds.center, Vector2.down, groundCollider.bounds.extents.y + 0.1f, groundLayer);
     }
 
     void MoveCapybara()
@@ -49,5 +85,28 @@ public class CapybaraMovement : MonoBehaviour
     void Jump()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpSpeed);
+    }
+
+    
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Orange"))
+        {
+            CollectObject(other.gameObject);
+
+            collectedOranges++;
+
+            Debug.Log("Capy collected an orange! Total number collected:" + collectedOranges);
+        }
+    }
+
+    void CollectObject(GameObject obj)
+    {
+        if (collectSound != null)
+        {
+            AudioSource.PlayClipAtPoint(collectSound, obj.transform.position);
+        }
+
+        obj.SetActive(false);
     }
 }
