@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting.AssemblyQualifiedNameParser;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -62,7 +59,6 @@ public class GameMenu : MonoBehaviour
 		orangeContent.GetComponent<TMP_Text>().text = collectedOranges.ToString();
 
 	}
-		
 
 	public void Resume()
 	{
@@ -83,8 +79,6 @@ public class GameMenu : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		Resume();
 	}
-
-	//if(PauseMenu.GameIsPaused) => s.source.pitch *= .5f;
 
 	void Pause()
 	{

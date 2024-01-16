@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CapybaraMovement : MonoBehaviour
@@ -95,8 +94,6 @@ public class CapybaraMovement : MonoBehaviour
             CollectObject(other.gameObject);
 
             collectedOranges++;
-
-            Debug.Log("Capy collected an orange! Total number collected:" + collectedOranges);
         }
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -9,15 +7,9 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        InvokeRepeating("Flip", 1f, 1f);
+        InvokeRepeating(nameof(Flip), 1f, 1f);
     }
 
-    void Update()
-    {
-        
-    }
-
- 
     void Flip()
     {
         spriteRenderer.flipX = !spriteRenderer.flipX;
