@@ -100,7 +100,7 @@ public class CapybaraMovement : MonoBehaviour
         }
     }
 
-    void CollectObject(GameObject obj)
+    public void CollectObject(GameObject obj)
     {
         if (collectSound != null)
         {
