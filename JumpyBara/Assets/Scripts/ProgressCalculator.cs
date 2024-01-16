@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ProgressCalculator : MonoBehaviour
 {
@@ -14,8 +13,6 @@ public class ProgressCalculator : MonoBehaviour
         startMarker = new Vector3(-6.28f,-3.05f,0);
         endMarker = new Vector3(304.0798f,-3.05222f,0f);
     }
-
-
 
     public void CalculateAndPrintProgress(Transform playerMarker)
     {
