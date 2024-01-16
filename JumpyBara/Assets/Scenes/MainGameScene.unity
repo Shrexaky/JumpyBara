@@ -3316,6 +3316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50be6c2b775bd914687f26a7c734dad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Star1: {fileID: 1845627147}
+  Star2: {fileID: 1996807820}
+  Star3: {fileID: 986898618}
+  goldStar: {fileID: 21300000, guid: 2747773e5812169499c5e280997bef5c, type: 3}
   pauseMenuUI: {fileID: 2136857926}
   progressCalculator: {fileID: 1152548409}
   progressSlider: {fileID: 1588937924}
@@ -13697,7 +13701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2889666835884714385, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 268.83
+      value: -6.28
       objectReference: {fileID: 0}
     - target: {fileID: 2889666835884714385, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13776,12 +13780,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 750676867}
     - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
       propertyPath: capySpear
       value: 
       objectReference: {fileID: 1272469325}
+    - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: spearIcon
       value: 
