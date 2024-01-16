@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrangeScript : MonoBehaviour
+public class LevitateScript : MonoBehaviour
 {
     public float levitationHeight = 0.1f;
     public float levitationSpeed = 3f;
