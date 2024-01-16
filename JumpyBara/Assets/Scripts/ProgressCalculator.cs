@@ -21,8 +21,5 @@ public class ProgressCalculator : MonoBehaviour
         float playerDistance = Vector3.Distance(startMarker, playerMarker.position);
 
         progress = Mathf.Clamp01(playerDistance / totalDistance) * 100;
-
-        Debug.Log("Gracz pokonał " + Math.Round(progress) + "% mapy.");
-
     }
 }

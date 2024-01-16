@@ -48,10 +48,6 @@ public class Camera_Movement : MonoBehaviour
 			audioSource.Play();
             
         }
-        else
-        {
-            Debug.LogWarning("Nie przypisano muzyki w edytorze Unity!");
-        }
 	}
 
 	void Podazaj()
