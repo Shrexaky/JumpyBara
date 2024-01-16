@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cel: {fileID: 1886088609}
-  offsetPoziomy: 9
+  offsetPoziomy: 6
   backgroundMusic: {fileID: 8300000, guid: 5b0cdd14670d51d40b62006705cfd0d5, type: 3}
   capyabara: {fileID: 1152548409}
 --- !u!82 &519420034
@@ -3310,6 +3310,7 @@ MonoBehaviour:
   progresslabel: {fileID: 1224604349}
   musicController: {fileID: 519420028}
   attempsLabel: {fileID: 2087804014}
+  orangeContent: {fileID: 71770023}
 --- !u!114 &603990648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12800,10 +12801,42 @@ PrefabInstance:
       propertyPath: staticSprite
       value: 
       objectReference: {fileID: 21300000, guid: 6e12811643fa2ee4da7ca71d12d6fd68, type: 3}
+    - target: {fileID: 2939790415700502875, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: bigCapySprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939790415700502875, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: bigCapySprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: efd77d1c9ffe18b4988b7ef85ed92255, type: 3}
+    - target: {fileID: 2939790415700502875, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: bigCapySprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: e2d4ec6ac0f7f14458b900558e054e50, type: 3}
+    - target: {fileID: 2939790415700502875, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: bigCapySprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 76d4567feb72333439a684b0bda94b5b, type: 3}
+    - target: {fileID: 2939790415700502875, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: bigCapySprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: c293488a6ffeb1d48a0e121d03793e40, type: 3}
+    - target: {fileID: 2939790415700502875, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: bigCapySprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: fb38b650fb109b442a09bb16a293edde, type: 3}
+    - target: {fileID: 2939790415700502875, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: bigCapySprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6f2df7810ca32324e8ce9efe692c7a85, type: 3}
     - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: endCanva
       value: 
       objectReference: {fileID: 750676867}
+    - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: sound_object
       value: 
@@ -12811,6 +12844,10 @@ PrefabInstance:
     - target: {fileID: 2939790415700502877, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: isWalking
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939790415700502877, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2939790415700502877, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: collectSound

@@ -17,10 +17,11 @@ public class GameMenu : MonoBehaviour
 	public GameObject progresslabel;
 	public GameObject musicController;
 	public GameObject attempsLabel;
+	public GameObject orangeContent;
 
 	void Start()
 	{
-		PlayerPrefs.SetInt("Attemps", PlayerPrefs.GetInt("Attemps")+1);
+		PlayerPrefs.SetInt("Attempts", PlayerPrefs.GetInt("Attempts")+1);
         PlayerPrefs.Save();
 	}
 	void Update()
@@ -44,7 +45,10 @@ public class GameMenu : MonoBehaviour
 		progress = progressCalculator.GetComponent<ProgressCalculator>().progress;
 		progressSlider.value = progress/100;
 		progresslabel.GetComponent<TMP_Text>().text = Math.Round(progress,0).ToString()+" %";
-		attempsLabel.GetComponent<TMP_Text>().text = PlayerPrefs.GetInt("Attemps").ToString();
+		attempsLabel.GetComponent<TMP_Text>().text = PlayerPrefs.GetInt("Attempts").ToString();
+		
+		orangeContent.GetComponent<TMP_Text>().text = progressCalculator.GetComponent<CapybaraMovement>().collectedOranges.ToString();
+
 	}
 		
 

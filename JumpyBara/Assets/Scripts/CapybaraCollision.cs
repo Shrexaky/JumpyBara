@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,14 +31,20 @@ public class CapybaraCollision : MonoBehaviour
         }
     }
 
+    IEnumerator EndCanvaActivation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        endCanva.gameObject.SetActive(true);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Flag"))
         {
             GetComponent<CapybaraMovement>().capybaraStop = true;
             gameOver=true;
-            endCanva.gameObject.SetActive(true);
             progressCalculator.CalculateAndPrintProgress(gameObject.transform);
+            StartCoroutine(EndCanvaActivation(3.0f));
         }
     }
 
