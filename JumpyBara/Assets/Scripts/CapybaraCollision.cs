@@ -27,16 +27,6 @@ public class CapybaraCollision : MonoBehaviour
         endCanva.gameObject.SetActive(true);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.CompareTag("Flag"))
-        {
-            GetComponent<CapybaraMovement>().capybaraStop = true;
-            gameOver=true;
-            progressCalculator.CalculateAndPrintProgress(gameObject.transform);
-            StartCoroutine(EndCanvaActivation(3.0f));
-        }
-    }
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.CompareTag("Enemy"))
@@ -74,8 +64,8 @@ public class CapybaraCollision : MonoBehaviour
 		{
 			GetComponent<CapybaraMovement>().capybaraStop = true;
 			gameOver = true;
-			endCanva.SetActive(true);
 			progressCalculator.CalculateAndPrintProgress(gameObject.transform);
+			StartCoroutine(EndCanvaActivation(3.0f));
 		}
 	}
 }
