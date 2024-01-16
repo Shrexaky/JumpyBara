@@ -11,7 +11,7 @@ public class CapybaraMovement : MonoBehaviour
 
     private bool canJump;
     private bool jumpHolding;
-    private int collectedOranges = 0;
+    public int collectedOranges = 0;
     public bool isWalking;
     public bool isJumping;
     private float previousXPosition;

@@ -9,6 +9,10 @@ using UnityEngine.UI;
 
 public class GameMenu : MonoBehaviour
 {
+	public GameObject Star1;
+	public GameObject Star2;
+	public GameObject Star3;
+	public Sprite goldStar;
 	public static bool GameIsPaused = false;
 	public GameObject pauseMenuUI;
 	public GameObject progressCalculator;
@@ -17,10 +21,14 @@ public class GameMenu : MonoBehaviour
 	public GameObject progresslabel;
 	public GameObject musicController;
 	public GameObject attempsLabel;
+	public GameObject attempsLabelMainUi;
+	public GameObject orangeContent;
+	public GameObject orangeCounterMainUi;
+	private int collectedOranges;
 
 	void Start()
 	{
-		PlayerPrefs.SetInt("Attemps", PlayerPrefs.GetInt("Attemps")+1);
+		PlayerPrefs.SetInt("Attempts", PlayerPrefs.GetInt("Attempts")+1);
         PlayerPrefs.Save();
 	}
 	void Update()
@@ -37,6 +45,10 @@ public class GameMenu : MonoBehaviour
 			}
 		}
 		SetSliderValue();
+		collectedOranges = progressCalculator.GetComponent<CapybaraMovement>().collectedOranges;
+		if(collectedOranges>0) Star1.GetComponent<Image>().sprite= goldStar;
+		if(collectedOranges>10) Star2.GetComponent<Image>().sprite= goldStar;
+		if(collectedOranges>20) Star3.GetComponent<Image>().sprite= goldStar;
 	}
 
 	void SetSliderValue()
@@ -44,7 +56,11 @@ public class GameMenu : MonoBehaviour
 		progress = progressCalculator.GetComponent<ProgressCalculator>().progress;
 		progressSlider.value = progress/100;
 		progresslabel.GetComponent<TMP_Text>().text = Math.Round(progress,0).ToString()+" %";
-		attempsLabel.GetComponent<TMP_Text>().text = PlayerPrefs.GetInt("Attemps").ToString();
+		attempsLabel.GetComponent<TMP_Text>().text = PlayerPrefs.GetInt("Attempts").ToString();
+		attempsLabelMainUi.GetComponent<TMP_Text>().text = PlayerPrefs.GetInt("Attempts").ToString();
+		orangeCounterMainUi.GetComponent<TMP_Text>().text = collectedOranges.ToString();
+		orangeContent.GetComponent<TMP_Text>().text = collectedOranges.ToString();
+
 	}
 		
 
