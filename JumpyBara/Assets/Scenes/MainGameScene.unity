@@ -3310,7 +3310,9 @@ MonoBehaviour:
   progresslabel: {fileID: 1224604349}
   musicController: {fileID: 519420028}
   attempsLabel: {fileID: 2087804014}
+  attempsLabelMainUi: {fileID: 588108494}
   orangeContent: {fileID: 71770023}
+  orangeCounterMainUi: {fileID: 1525832509}
 --- !u!114 &603990648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12755,7 +12757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2889666835884714385, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.28
+      value: 268.83
       objectReference: {fileID: 0}
     - target: {fileID: 2889666835884714385, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: m_LocalPosition.y
