@@ -64,8 +64,8 @@ public class CapybaraCollision : MonoBehaviour
 		{
 			GetComponent<CapybaraMovement>().capybaraStop = true;
 			gameOver = true;
-			endCanva.SetActive(true);
 			progressCalculator.CalculateAndPrintProgress(gameObject.transform);
+			StartCoroutine(EndCanvaActivation(3.0f));
 		}
 	}
 }
