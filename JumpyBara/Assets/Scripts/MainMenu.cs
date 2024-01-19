@@ -5,9 +5,16 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
 	public Slider volumeSlider;
-	public void PlayGame()
+	public void PlayLevel1()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		PlayerPrefs.SetInt("Attempts", 0);
+		PlayerPrefs.Save();
+	}
+
+	public void PlayLevel2()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
 		PlayerPrefs.SetInt("Attempts", 0);
 		PlayerPrefs.Save();
 	}

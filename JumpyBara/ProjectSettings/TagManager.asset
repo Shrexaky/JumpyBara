@@ -9,6 +9,7 @@ TagManager:
   - Flag
   - Spear
   - Lightsaber
+  - Level2
   layers:
   - Default
   - TransparentFX
