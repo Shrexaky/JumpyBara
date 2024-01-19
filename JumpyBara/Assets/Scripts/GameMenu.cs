@@ -70,7 +70,7 @@ public class GameMenu : MonoBehaviour
 
 	public void GoToMainMenu()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+		SceneManager.LoadScene("Menu");
 		Resume();
 	}
 
