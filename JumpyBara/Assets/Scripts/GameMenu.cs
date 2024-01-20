@@ -80,6 +80,14 @@ public class GameMenu : MonoBehaviour
 		Resume();
 	}
 
+	public void NextLevel()
+	{
+		PlayerPrefs.SetInt("Attempts", 0);
+        PlayerPrefs.Save();
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+		Resume();
+	}
+
 	void Pause()
 	{
 		musicController.GetComponent<AudioSource>().volume = musicController.GetComponent<AudioSource>().volume * 0.3f;

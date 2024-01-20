@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
 	public Slider volumeSlider;
+	public GameObject level2Blockade;
 	public void PlayLevel1()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -21,11 +22,16 @@ public class MainMenu : MonoBehaviour
 
 	public void QuitGame()
 	{
+		PlayerPrefs.SetString("Level_2_Active","false");
 		Application.Quit();
 	}
 
     void Start()
     {
+		if(PlayerPrefs.GetString("Level_2_Active")=="true")
+		{
+			level2Blockade.gameObject.SetActive(false);
+		}
         AudioListener.volume = PlayerPrefs.GetFloat("Volume");
 		volumeSlider.value = PlayerPrefs.GetFloat("Volume");
     }
