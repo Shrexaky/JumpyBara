@@ -3535,7 +3535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cel: {fileID: 1886088609}
   offsetPoziomy: 6
-  backgroundMusic: {fileID: 8300000, guid: 5b0cdd14670d51d40b62006705cfd0d5, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 89a33567243fa0a41b1e602e3ed565c8, type: 3}
   capyabara: {fileID: 1152548409}
 --- !u!82 &519420034
 AudioSource:
@@ -14772,9 +14772,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1673518945}
     - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: nextlevelBtn
+      value: 
+      objectReference: {fileID: 659520690}
+    - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: sound_object
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: gameOverCanva
+      value: 
+      objectReference: {fileID: 750676867}
     - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: capyLightsaber
       value: 
@@ -14783,6 +14791,10 @@ PrefabInstance:
       propertyPath: lightsaberIcon
       value: 
       objectReference: {fileID: 309678800}
+    - target: {fileID: 2939790415700502876, guid: a939b2beca9813847a7804000244ab75, type: 3}
+      propertyPath: repeatelevelBtn
+      value: 
+      objectReference: {fileID: 659520690}
     - target: {fileID: 2939790415700502877, guid: a939b2beca9813847a7804000244ab75, type: 3}
       propertyPath: isWalking
       value: 0

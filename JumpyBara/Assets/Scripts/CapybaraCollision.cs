@@ -10,6 +10,8 @@ public class CapybaraCollision : MonoBehaviour
 	public ProgressCalculator progressCalculator;
 	public bool gameOver = false;
 	public GameObject endCanva;
+	public GameObject nextlevelBtn;
+	public GameObject repeatelevelBtn;
 	public Slider slider;
 	public float progress;
 	public GameObject spearIcon;
@@ -86,6 +88,9 @@ public class CapybaraCollision : MonoBehaviour
 			GetComponent<CapybaraMovement>().capybaraStop = true;
 			gameOver = true;
 			progressCalculator.CalculateAndPrintProgress(gameObject.transform);
+			PlayerPrefs.SetString("Level_2_Active","true");
+			repeatelevelBtn.SetActive(false);
+			nextlevelBtn.SetActive(true);
 			StartCoroutine(EndCanvaActivation(3.0f));
 		}
 	}
